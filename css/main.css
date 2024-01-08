@@ -382,14 +382,14 @@ footer .container .body-context p:last-child {
   position: relative;
 }
 
-.intro::before{
+.intro::before {
   content: "";
-    width: 100%;
-    height: 512px;
-    position: absolute;
-    bottom: 0;
-    background: url(../img/Group-3493-1.png) no-repeat;
-    background-size: cover;
+  width: 100%;
+  height: 512px;
+  position: absolute;
+  bottom: 0;
+  background: url(../img/Group-3493-1.png) no-repeat;
+  background-size: cover;
 }
 .intro__img {
   display: none;
@@ -406,7 +406,26 @@ footer .container .body-context p:last-child {
 }
 @media (min-width: 1900px) {
   .intro {
+    height: 1150px;
+  }
+  .intro::before {
+    height: 700px;
+  }
+}
+@media (min-width: 2200px) {
+  .intro {
     height: 1300px;
+  }
+  .intro::before {
+    height: 733px;
+  }
+}
+@media (min-width: 2500px) {
+  .intro {
+    height: 1300px;
+  }
+  .intro::before {
+    height: 933px;
   }
 }
 @media (max-width: 1300px) {
@@ -414,8 +433,8 @@ footer .container .body-context p:last-child {
     background-size: cover;
     height: 890px;
   }
-  .intro::before{
-      background-size: contain;
+  .intro::before {
+    background-size: contain;
   }
 }
 @media (max-width: 1200px) {
@@ -436,8 +455,7 @@ footer .container .body-context p:last-child {
   }
   .intro::before {
     height: 400px;
-   
-}
+  }
 }
 @media (max-width: 800px) {
   .intro {
@@ -445,19 +463,14 @@ footer .container .body-context p:last-child {
   }
 }
 @media (max-width: 680px) {
- 
   .intro::before {
     height: 350px;
-   
-}
- 
+  }
 }
 @media (max-width: 580px) {
- 
   .intro::before {
     display: none;
   }
- 
 }
 
 @media (max-width: 580px) {
@@ -1020,13 +1033,13 @@ footer .container .body-context p:last-child {
     height: 850px;
   }
 }
-@media (max-width: 1200px){
-  .boot-camp{
+@media (max-width: 1200px) {
+  .boot-camp {
     height: 1000px;
   }
 }
-@media (max-width: 730px){
-  .boot-camp{
+@media (max-width: 730px) {
+  .boot-camp {
     height: 1100px;
   }
 }
@@ -1041,7 +1054,23 @@ footer .container .body-context p:last-child {
 }
 @media (min-width: 1900px) {
   .boot-camp::before {
-    height: 720px;
+    height: 730px;
+  }
+}
+@media (min-width: 2200px) {
+  .boot-camp::before {
+    height: 850px;
+  }
+  .boot-camp {
+    height: 1000px;
+  }
+}
+@media (min-width: 2500px) {
+  .boot-camp::before {
+    height: 1000px;
+  }
+  .boot-camp {
+    height: 1200px;
   }
 }
 @media (max-width: 580px) {
@@ -2207,7 +2236,7 @@ footer .row a.mail {
 .tarif_row_mobile {
   display: none;
 }
-@media  (max-width: 1200px) {
+@media (max-width: 1200px) {
   .tarif_row_mobile {
     padding-top: 32px;
   }
