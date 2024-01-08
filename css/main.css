@@ -376,14 +376,30 @@ footer .container .body-context p:last-child {
   margin-top: 32px;
   padding-top: 56px;
   padding-bottom: 43px;
-  background: url(../img/Frame-618-3.png) no-repeat center right;
+  background: url(../img/Frame-618-1.png) no-repeat center center;
   background-size: cover;
   height: 903px;
+  position: relative;
+}
+
+.intro::before{
+  content: "";
+    width: 100%;
+    height: 512px;
+    position: absolute;
+    bottom: 0;
+    background: url(../img/Group-3493-1.png) no-repeat;
+    background-size: cover;
 }
 .intro__img {
   display: none;
   max-width: 580px;
   margin-top: -100px;
+}
+@media (max-width: 580px) {
+  .intro__img {
+    display: block;
+  }
 }
 .intro__img img {
   width: 100%;
@@ -395,8 +411,17 @@ footer .container .body-context p:last-child {
 }
 @media (max-width: 1300px) {
   .intro {
-    background-size: contain;
-    height:890px;
+    background-size: cover;
+    height: 890px;
+  }
+  .intro::before{
+      background-size: contain;
+  }
+}
+@media (max-width: 1200px) {
+  .intro {
+    background-size: cover;
+    height: 890px;
   }
 }
 @media (max-width: 580px) {
@@ -405,26 +430,45 @@ footer .container .body-context p:last-child {
   }
 }
 
-
 @media (max-width: 990px) {
   .intro {
-    background-size: contain;
-    height:890px;
+    height: 800px;
   }
+  .intro::before {
+    height: 400px;
+   
 }
-@media (max-width: 780px) {
+}
+@media (max-width: 800px) {
   .intro {
-    background-size: contain;
-    height: 495px;
-    padding-top: 0;
+    height: 680px;
   }
 }
+@media (max-width: 680px) {
+ 
+  .intro::before {
+    height: 350px;
+   
+}
+ 
+}
+@media (max-width: 580px) {
+ 
+  .intro::before {
+    display: none;
+  }
+ 
+}
+
 @media (max-width: 580px) {
   .intro {
     margin-top: 16px;
     background: url(../img/Frame-618-5.png) no-repeat center center;
     background-size: cover;
     height: auto;
+  }
+  .intro::before {
+    height: 350px;
   }
 }
 .intro-section-bg {
@@ -928,6 +972,11 @@ footer .container .body-context p:last-child {
     height: 1323px;
   }
 }
+@media (max-width: 1200px) {
+  .trading-playground {
+    padding-top: 52px;
+  }
+}
 @media (max-width: 580px) {
   .trading-playground {
     padding-top: 25px;
@@ -969,6 +1018,16 @@ footer .container .body-context p:last-child {
 @media (min-width: 1900px) {
   .boot-camp {
     height: 850px;
+  }
+}
+@media (max-width: 1200px){
+  .boot-camp{
+    height: 1000px;
+  }
+}
+@media (max-width: 730px){
+  .boot-camp{
+    height: 1100px;
   }
 }
 .boot-camp::before {
@@ -1320,7 +1379,7 @@ footer .container .body-context p:last-child {
   margin-left: 5px;
   display: contents;
   white-space: nowrap;
-  color: #3E65Ff;
+  color: #3e65ff;
 }
 
 .cookie-bar__close {
@@ -1875,8 +1934,11 @@ footer .container .body-context p:last-child {
     background-color: rgba(0, 11, 54, 1);
   }
 }
-.trade .swiper {
-  padding-top: 60px;
+
+@media screen and (max-width: 580px) {
+  .trade .swiper {
+    padding-top: 24px;
+  }
 }
 .swiper-slide-one {
   background: url(../img/Group=3492.png) no-repeat center;
@@ -1969,7 +2031,7 @@ footer .container .body-context p:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 65px auto 0 auto;
+  margin: 5px auto 0 auto;
 }
 @media screen and (max-width: 580px) {
   .trade .row {
@@ -2144,6 +2206,11 @@ footer .row a.mail {
 }
 .tarif_row_mobile {
   display: none;
+}
+@media  (max-width: 1200px) {
+  .tarif_row_mobile {
+    padding-top: 32px;
+  }
 }
 .mobile-show {
   display: none;
@@ -2524,12 +2591,11 @@ body:has(.modal-form[style*="flex"]) {
   .trade {
     padding: 64px 0;
   }
+
   .trade .title.mb-60 {
     margin-bottom: 42px;
   }
-  .trade .row button {
-    display: none;
-  }
+
   .trade .row {
     width: 100%;
   }
@@ -2564,6 +2630,27 @@ body:has(.modal-form[style*="flex"]) {
     padding: 16px;
     margin-top: 0;
     margin-bottom: 0px;
+  }
+  @media (max-width: 580px) {
+    .trade {
+      padding: 24px 0 0 0;
+    }
+    .trade .container {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .tariffs {
+      padding: 64px 0 54px 0;
+    }
+    .video .container {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  @media (max-width: 1030px) {
+    .trade .row button {
+      display: none;
+    }
   }
 
   footer {
@@ -2744,5 +2831,49 @@ body:has(.modal-form[style*="flex"]) {
     padding: 13.421px 20.423px;
     max-width: 284px;
     text-align: center;
+  }
+}
+.slide__img {
+  position: relative;
+  width: 100%;
+}
+.swiper-slide__img {
+  position: absolute;
+  top: -212px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 238px;
+  height: 212px;
+}
+.trade_slide .swiper-slide {
+  min-height: 345px;
+}
+.trade .swiper {
+  padding-top: 60px;
+}
+@media (max-width: 800px) {
+  .trade .swiper {
+    padding-top: 90px;
+  }
+}
+@media (max-width: 640px) {
+  .trade .swiper {
+    padding-top: 125px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .trade .swiper {
+    padding-top: 24px;
+  }
+}
+@media (max-width: 580px) {
+  .swiper-slide__img {
+    position: static;
+    transform: translate(0);
+  }
+  .swiper-slide__img {
+    width: 188px;
+    height: 188px;
+    margin: 0 auto;
   }
 }

@@ -56,135 +56,129 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1.5,
     spaceBetween: 12,
     debugger: true,
-    
   });
   const modal = document.getElementById("modal-form");
- 
+
   const modal_removers = document.querySelectorAll(".modal-remover");
   modal_removers.forEach((elem) =>
     elem.addEventListener("click", () => (modal.style.display = "none"))
   );
-
 });
 
-const links = document.querySelectorAll('.nav__link');
+const links = document.querySelectorAll(".nav__link");
 
-links.forEach(link => {
-  link.addEventListener('click', e => {
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const target = document.querySelector(link.getAttribute('href'));
+    const target = document.querySelector(link.getAttribute("href"));
 
     window.scroll({
       left: 0,
       top: target.offsetTop,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 });
 
-const getUrlParams = function() {
+const getUrlParams = function () {
   const urlParams = new URLSearchParams(window.location.search);
   const entries = urlParams.entries();
   for (const entry of entries) {
     localStorage.setItem(entry[0], entry[1]);
   }
 
-  let afftrack = urlParams.get('afftrack') || localStorage.getItem('afftrack');
-  const clickid = urlParams.get('clickid') || localStorage.getItem('clickid');
-  const click_id = urlParams.get('click_id') || localStorage.getItem('click_id');
-  const gclid = urlParams.get('gclid') ?? localStorage.getItem('gclid');
+  let afftrack = urlParams.get("afftrack") || localStorage.getItem("afftrack");
+  const clickid = urlParams.get("clickid") || localStorage.getItem("clickid");
+  const click_id =
+    urlParams.get("click_id") || localStorage.getItem("click_id");
+  const gclid = urlParams.get("gclid") ?? localStorage.getItem("gclid");
 
   if (clickid) {
-    afftrack += '__clickid-' + clickid;
-  } else if (gclid && !afftrack.includes('__CONVTRANSFR__clickid-')) {
-    afftrack += '__CONVTRANSFR__clickid-' + gclid;
+    afftrack += "__clickid-" + clickid;
+  } else if (gclid && !afftrack.includes("__CONVTRANSFR__clickid-")) {
+    afftrack += "__CONVTRANSFR__clickid-" + gclid;
   }
 
   return {
-    aff: urlParams.get('aff') || localStorage.getItem('aff'),
+    aff: urlParams.get("aff") || localStorage.getItem("aff"),
     afftrack: afftrack,
-    aff_model: urlParams.get('aff_model') ?? localStorage.getItem('aff_model'),
+    aff_model: urlParams.get("aff_model") ?? localStorage.getItem("aff_model"),
     clickid: clickid,
     click_id: click_id,
-    idtrader: urlParams.get('idtrader') || localStorage.getItem('idtrader'),
+    idtrader: urlParams.get("idtrader") || localStorage.getItem("idtrader"),
     gclid: gclid,
-    uuid: localStorage.getItem('uuid'),
-    is_coinbase: localStorage.getItem('is_coinbase'),
-    country: localStorage.getItem('country'),
-    utm_source: localStorage.getItem('utm_source'),
-    utm_medium: localStorage.getItem('utm_medium'),
-    utm_campaign: localStorage.getItem('utm_campaign'),
+    uuid: localStorage.getItem("uuid"),
+    is_coinbase: localStorage.getItem("is_coinbase"),
+    country: localStorage.getItem("country"),
+    utm_source: localStorage.getItem("utm_source"),
+    utm_medium: localStorage.getItem("utm_medium"),
+    utm_campaign: localStorage.getItem("utm_campaign"),
   };
 };
 
 getUrlParams();
 
-
-
 // плавноная прокрутка по якорям
-const anchors = document.querySelectorAll('a[href*="#"]')
+const anchors = document.querySelectorAll('a[href*="#"]');
 for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
-    
-    const blockID = anchor.getAttribute('href').substr(1)
-    
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const blockID = anchor.getAttribute("href").substr(1);
+
     document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
+      behavior: "smooth",
+      block: "start",
+    });
+  });
 }
 
 function showIframe() {
-  const videoContent = document.querySelector('.video__content');
-  const videoIframe = document.querySelector('.video__iframe');
+  const videoContent = document.querySelector(".video__content");
+  const videoIframe = document.querySelector(".video__iframe");
 
-  videoContent.addEventListener('click', () => {
-    videoContent.classList.add('video__hide');
-    videoIframe.classList.add('video__show');
-  })
+  videoContent.addEventListener("click", () => {
+    videoContent.classList.add("video__hide");
+    videoIframe.classList.add("video__show");
+  });
 }
-showIframe()
+showIframe();
 
 // accordion
 function getAccordion() {
   function accordionActive() {
-    document.querySelectorAll(".accordion.accordion--active").forEach((function(e) {
-      const t = e.querySelector(".accordion__list");
-      e.classList.remove("accordion--active"),
-      t.style.maxHeight = null
-   }
-   ))
+    document
+      .querySelectorAll(".accordion.accordion--active")
+      .forEach(function (e) {
+        const t = e.querySelector(".accordion__list");
+        e.classList.remove("accordion--active"), (t.style.maxHeight = null);
+      });
   }
-  
+
   function getShowAccordion() {
     const e = document.querySelectorAll(".accordion");
-      if (!e)
-         return !1;
-      e.forEach((function(e) {
-         const t = e.querySelector(".accordion__btn")
-          , i = e.querySelector(".accordion__list");
-         t.addEventListener("click", (function() {
-            !function(e) {
-              return e.classList.contains("accordion--active")
-            }(e) ? function(e, t) {
+    if (!e) return !1;
+    e.forEach(function (e) {
+      const t = e.querySelector(".accordion__btn"),
+        i = e.querySelector(".accordion__list");
+      t.addEventListener("click", function () {
+        !(function (e) {
+          return e.classList.contains("accordion--active");
+        })(e)
+          ? (function (e, t) {
               accordionActive(),
-              t.style.maxHeight = t.scrollHeight + "px",
-              e.classList.add("accordion--active")
-            }(e, i) : function(e, t) {
-              t.style.maxHeight = null,
-              e.classList.remove("accordion--active")
-            }(e, i)
-         }
-         ))
-      }
-      ))
+                (t.style.maxHeight = t.scrollHeight + "px"),
+                e.classList.add("accordion--active");
+            })(e, i)
+          : (function (e, t) {
+              (t.style.maxHeight = null),
+                e.classList.remove("accordion--active");
+            })(e, i);
+      });
+    });
   }
-  getShowAccordion()
+  getShowAccordion();
 }
 
-
-
-getAccordion()
+getAccordion();
