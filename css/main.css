@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&amp;display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 :root {
   --black: #002329;
   --black-bg: #000b36;
@@ -376,9 +375,9 @@ footer .container .body-context p:last-child {
   margin-top: 32px;
   padding-top: 56px;
   padding-bottom: 43px;
-  background: url(../img/Frame-618-1.png) no-repeat center center;
-  background-size: cover;
-  height: 903px;
+  background: url(../img/Frame-618-big.png) no-repeat center center;
+  background-size: contain;
+  height: 921px;
   position: relative;
 }
 
@@ -388,8 +387,8 @@ footer .container .body-context p:last-child {
   height: 512px;
   position: absolute;
   bottom: 0;
-  background: url(../img/Group-3493-1.png) no-repeat;
-  background-size: cover;
+  background: url(../img/Group-3493-big.png) no-repeat right  center;
+  background-size: contain;
 }
 .intro__img {
   display: none;
@@ -404,12 +403,31 @@ footer .container .body-context p:last-child {
 .intro__img img {
   width: 100%;
 }
-@media (min-width: 1900px) {
+@media (min-width: 1500px) {
+  .intro {
+    height: 1050px;
+  }
+  .intro::before {
+    height: 620px;
+  }
+    
+}
+@media (min-width: 1700px) {
   .intro {
     height: 1150px;
   }
   .intro::before {
     height: 700px;
+  }
+}
+@media (min-width: 1900px) {
+  .intro {
+    background: url(../img/Frame-618-extra-big.png) no-repeat center center;
+    background-size: cover;
+  }
+  .intro::before {
+    height: 780px;
+    background-size: cover;
   }
 }
 @media (min-width: 2200px) {
@@ -459,7 +477,7 @@ footer .container .body-context p:last-child {
 }
 @media (max-width: 800px) {
   .intro {
-    height: 680px;
+    height: 610px;
   }
 }
 @media (max-width: 680px) {
@@ -778,7 +796,7 @@ footer .container .body-context p:last-child {
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  margin-top: 8px;
+  margin-top: 16px;
   max-width: 826px;
 }
 @media (max-width: 1140px) {
@@ -896,7 +914,7 @@ footer .container .body-context p:last-child {
   justify-content: center;
   color: var(--black);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
   transition: 300ms ease;
 
@@ -1028,6 +1046,16 @@ footer .container .body-context p:last-child {
   height: 704px;
   position: relative;
 }
+@media (min-width: 1500px) {
+  .boot-camp {
+    height: 800px;
+  }
+}
+@media (min-width: 1700px) {
+  .boot-camp {
+    height: 900px;
+  }
+}
 @media (min-width: 1900px) {
   .boot-camp {
     height: 850px;
@@ -1046,15 +1074,26 @@ footer .container .body-context p:last-child {
 .boot-camp::before {
   content: "";
   width: 100%;
-  height: 576px;
+  height: 600px;
   position: absolute;
   bottom: 0;
-  background: url(../img/Group-3493.png) no-repeat;
-  background-size: cover;
+  background: url(../img/Group-3494-big.png) no-repeat;
+  background-size: contain;
+}
+@media (min-width: 1500px) {
+  .boot-camp::before {
+    height: 670px;
+  }
+}
+@media (min-width: 1700px) {
+  .boot-camp::before {
+    height: 770px;
+  }
 }
 @media (min-width: 1900px) {
   .boot-camp::before {
-    height: 730px;
+    height: 760px;
+    background-size: cover;
   }
 }
 @media (min-width: 2200px) {
@@ -1071,6 +1110,12 @@ footer .container .body-context p:last-child {
   }
   .boot-camp {
     height: 1200px;
+  }
+}
+@media (max-width: 1200px) {
+  .boot-camp::before {
+   
+    background-size: cover;
   }
 }
 @media (max-width: 580px) {
@@ -1148,7 +1193,7 @@ footer .container .body-context p:last-child {
 }
 .accordion {
   overflow: hidden;
-
+border-radius: 16px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   color: var(--white);
@@ -2078,22 +2123,29 @@ footer .container .body-context p:last-child {
   align-items: center;
   justify-content: center;
   position: relative;
-  border-radius: 50%;
+  border-radius: 16px;
+  margin-top: 60px;
 }
 
 .trade .row button.btn-next {
-  top: 58%;
+  /* top: 65%;
   transform: translateY(-58%);
   right: 0px;
-  position: absolute;
+  position: absolute; */
   z-index: 4;
+  height: 345px;
+  width: 90px;
+  background-color: var(--black-bg);
 }
 .trade .row button.btn-prev {
-  top: 58%;
+  /* top: 65%;
   transform: translateY(-58%);
   left: 0px;
-  position: absolute;
+  position: absolute; */
   z-index: 4;
+  height: 345px;
+  width: 90px;
+  background-color: var(--black-bg);
 }
 .trade_slide .swiper-slide-active {
   width: 80%;
@@ -2168,11 +2220,16 @@ footer .container .body-context p {
   margin-top: 16px;
 }
 footer .container a {
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
   transition: 0.3s;
+}
+@media  (max-width: 1200px) {
+  footer .container a {
+    text-decoration: none;
+  }
 }
 footer .container a:hover {
   text-decoration: none;
@@ -2879,6 +2936,7 @@ body:has(.modal-form[style*="flex"]) {
 }
 .trade .swiper {
   padding-top: 60px;
+  max-width: 820px;
 }
 @media (max-width: 800px) {
   .trade .swiper {
