@@ -39,16 +39,21 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     centeredSlides: true,
     spaceBetween: 20,
+    pagination: false,
     breakpoints: {
       580: {
         // slidesPerView: 1.2,
         spaceBetween: 40,
+        pagination: true
       },
     },
     debugger: true,
     navigation: {
       prevEl: ".btn-prev",
       nextEl: ".btn-next",
+    },
+    pagination: {
+      el: '.swiper-pagination',
     },
     loop: true,
   });
