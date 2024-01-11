@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
       580: {
         // slidesPerView: 1.2,
         spaceBetween: 40,
+       
+      },
+      1030: {
+        // slidesPerView: 1.2,
+        spaceBetween: 40,
         pagination: true
       },
     },
