@@ -1085,22 +1085,10 @@ footer .container .body-context p:last-child {
     background-size: contain;
   }
 }
-/* @media (max-width: 1200px) {
-  .trading-playground {
-    padding-top: 52px;
-    height: 767px;
-  }
-} */
-/* @media (max-width: 1030px) {
-  .trading-playground {
-    padding-top: 52px;
-    height: 767px;
-  }
-} */
+
 @media (max-width: 630px) {
   .trading-playground {
     padding-top: 25px;
-    /* background: url(../img/Group-3498-mobile.png) no-repeat bottom center; */
    
   }
 }
@@ -2855,6 +2843,7 @@ body:has(.modal-form[style*="flex"]) {
     margin-top: 0;
     margin-bottom: 0px;
   }
+}
   @media (max-width: 1030px) {
     .trade {
       padding: 64px 0 0 0;
