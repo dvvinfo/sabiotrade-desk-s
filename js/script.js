@@ -44,12 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
       580: {
         // slidesPerView: 1.2,
         spaceBetween: 40,
-       
       },
       1030: {
         // slidesPerView: 1.2,
         spaceBetween: 40,
-        pagination: true
+        pagination: true,
       },
     },
     debugger: true,
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".btn-next",
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
     },
     loop: true,
   });
@@ -192,3 +191,30 @@ function getAccordion() {
 }
 
 getAccordion();
+
+// переключение языка
+function getSwitchingLang() {
+  const languageButton = document.getElementById("languageButton");
+  const langValue = document.documentElement.lang;
+
+  const languages = {
+    en: { icon: "en", text: "ENG" },
+    it: { icon: "it", text: "ITA" },
+    es: { icon: "esp", text: "SPA" },
+    de: { icon: "de", text: "GER" },
+    fr: { icon: "fr", text: "FRA" },
+    pt: { icon: "pt", text: "POR" },
+
+  };
+
+  const selectedLang = languages[langValue] || languages.en; 
+
+  languageButton.style.background = `url(../img/${selectedLang.icon}.svg) no-repeat left center`;
+  languageButton.style.paddingLeft = "35px";
+  languageButton.style.width = "90px";
+  languageButton.style.backgroundSize = "25px 25px";
+  languageButton.style.backgroundPosition = "center left";
+  languageButton.innerHTML = selectedLang.text;
+}
+
+getSwitchingLang();

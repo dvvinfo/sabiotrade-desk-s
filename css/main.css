@@ -98,7 +98,7 @@ body {
   font-weight: 500;
   line-height: 1.5;
 }
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .nav__row {
     justify-content: flex-end;
   }
@@ -111,7 +111,7 @@ body {
     order: 0;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .nav__logo {
     margin-right: auto;
   }
@@ -208,7 +208,7 @@ body {
 footer .container .body-context p:last-child {
   text-align: right;
 }
-@media (max-width: 630px) {
+@media (max-width: 800px) {
   .burger-checkbox {
     display: block;
     position: absolute;
@@ -301,7 +301,7 @@ footer .container .body-context p:last-child {
     z-index: -1;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .dropdown {
     display: none;
   }
@@ -363,7 +363,7 @@ footer .container .body-context p:last-child {
 .nav__login {
   margin-right: 28px;
 }
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .nav__login {
     display: none;
   }
@@ -377,10 +377,9 @@ footer .container .body-context p:last-child {
   background: var(--green);
   
 }
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .nav__funded {
     margin-right: 24px;
-    height: 56px;
   }
 }
 .nav__funded a {
@@ -1086,7 +1085,7 @@ footer .container .body-context p:last-child {
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 768px) {
   .trading-playground {
     padding-top: 25px;
    
@@ -1595,11 +1594,11 @@ footer .container .body-context p:last-child {
   border-radius: 100%;
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .lang__icon {
     display: none;
   }
-}
+} */
 
 .lang__icon > img {
   -o-object-fit: cover;
